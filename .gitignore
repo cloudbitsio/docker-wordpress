@@ -1,0 +1,81 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+!web/app/themes/*
+!web/app/themes/.gitkeep
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+/package-lock.json
+
+# WP-CLI
+wp-cli.local.yml
+
+
+# PLUGINS & Misc.
+# ==================== #
+
+# Node Modules
+node_modules/
+
+# Query Monitor
+web/app/db.php
+
+# WP Rocket
+web/app/cache/
+!web/app/cache/.gitkeep
+web/app/cache/busting/
+!web/app/cache/busting/.gitkeep
+web/app/cache/critical-css/
+!web/app/cache/critical-css/.gitkeep
+web/app/cache/min/
+!web/app/cache/min/.gitkeep
+web/app/cache/wp-rocket/
+!web/app/cache/wp-rocket/.gitkeep
+
+# Hummingbird
+web/app/wphb-logs
+web/app/wphb-cache
+
+# WP Smush
+web/app/smush-webp
+
+# Never commit an SQL
+*.sql
+*.sql.gz
+
+# Wordpress default files in root directory
+#   WP is installed safely inside site/web/wp/
+/index.php    
+/readme.html             
+/wp-config.php        
+/wp-login.php     
+/wp-signup.php
+/.htaccess   
+/license.txt  
+/wp-blog-header.php    
+/wp-links-opml.php  
+/wp-mail.php      
+/wp-trackback.php
+/wp-activate.php
+/wp-comments-post.php
+/wp-cron.php
+/wp-load.php
+/wp-settings.php
+/xmlrpc.php
