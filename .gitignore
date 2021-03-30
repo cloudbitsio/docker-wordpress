@@ -1,16 +1,19 @@
+# Ansible
+vars/
+
 # Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
-!web/app/themes/*
-!web/app/themes/.gitkeep
+!site/web/app/plugins/*
+!site/web/app/plugins/.gitkeep
+site/web/app/mu-plugins/*/
+site/web/app/upgrade
+site/web/app/uploads/*
+!site/web/app/uploads/.gitkeep
+!site/web/app/themes/*
+!site/web/app/themes/.gitkeep
 
 # WordPress
-web/wp
-web/.htaccess
+site/web/wp
+site/web/.htaccess
 
 # Logs
 *.log
@@ -35,33 +38,33 @@ wp-cli.local.yml
 node_modules/
 
 # Query Monitor
-web/app/db.php
+site/web/app/db.php
 
 # WP Rocket
-web/app/cache/
-!web/app/cache/.gitkeep
-web/app/cache/busting/
-!web/app/cache/busting/.gitkeep
-web/app/cache/critical-css/
-!web/app/cache/critical-css/.gitkeep
-web/app/cache/min/
-!web/app/cache/min/.gitkeep
-web/app/cache/wp-rocket/
-!web/app/cache/wp-rocket/.gitkeep
+site/web/app/cache/
+!site/web/app/cache/.gitkeep
+site/web/app/cache/busting/
+!site/web/app/cache/busting/.gitkeep
+site/web/app/cache/critical-css/
+!site/web/app/cache/critical-css/.gitkeep
+site/web/app/cache/min/
+!site/web/app/cache/min/.gitkeep
+site/web/app/cache/wp-rocket/
+!site/web/app/cache/wp-rocket/.gitkeep
 
 # Hummingbird
-web/app/wphb-logs
-web/app/wphb-cache
+site/web/app/wphb-logs
+site/web/app/wphb-cache
 
 # WP Smush
-web/app/smush-webp
+site/web/app/smush-webp
 
 # Never commit an SQL
 *.sql
 *.sql.gz
 
 # Wordpress default files in root directory
-#   WP is installed safely inside site/web/wp/
+#   WP is installed safely inside site/site/web/wp/
 /index.php    
 /readme.html             
 /wp-config.php        

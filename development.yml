@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/main.yml
+    - vars/vault.yml
+    - vars/sites.yml
+  tasks:
+    - name: Replace
+      shell: sed -i 's|DEVELOPMENT|{{  }}' Dockerfile
+
+
+# sed
+#   Dockerfile
+#   Docker-compose
+#   ENV WP_HOME
+
+# composer install
+# composer require roots/wp-password-bcrypt
+
+# install self-signed certificate
+
+# - name: Ensure python OpenSSL dependencies are installed.
+#   pip:
+#     name: pyOpenSSL
+#     state: present
+
+# - name: Ensure directory exists for local self-signed TLS certs.
+#   file:
+#     path: /etc/letsencrypt/live/{{ server_hostname }}
+#     state: directory
+
+# - name: Generate an OpenSSL private key.
+#   openssl_privatekey:
+#     path: /etc/letsencrypt/live/{{ server_hostname }}/privkey.pem
+
+# - name: Generate an OpenSSL CSR.
+#   openssl_csr:
+#     path: /etc/ssl/private/{{ server_hostname }}.csr
+#     privatekey_path: /etc/letsencrypt/live/{{ server_hostname }}/privkey.pem
+#     common_name: "{{ server_hostname }}"
+
+# - name: Generate a Self Signed OpenSSL certificate.
+#   openssl_certificate:
+#     path: /etc/letsencrypt/live/{{ server_hostname }}/fullchain.pem
+#     privatekey_path: /etc/letsencrypt/live/{{ server_hostname }}/privkey.pem
+#     csr_path: /etc/ssl/private/{{ server_hostname }}.csr
+#     provider: selfsigned

@@ -36,7 +36,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
-    image: saddamazad/cloudbits.io:development
+    image: namespace/example.com:development
     container_name: webserver
     restart: unless-stopped
     env_file: .env

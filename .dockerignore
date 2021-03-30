@@ -1,0 +1,5 @@
+.git
+.github
+site/web/app/uploads
+docker-compose.yml
+*.sql

@@ -19,14 +19,3 @@ sed -i 's|redis_host|'$REDIS_HOST'|g' /var/www/html/.env
 sed -i 's|redis_port|'$REDIS_PORT'|g' /var/www/html/.env
 sed -i "s|redis_password|"$REDIS_AUTH"|g" /var/www/html/.env
 
-## WP Rocket permissions
-#
-chown www-data:www-data -R /var/www/html/web/app/wp-rocket-config
-cd /var/www/html/web/app/wp-rocket-config && \
-    chown www-data:www-data -R * && \
-    find . -type d -exec chmod 755 {} \; && \
-    find . -type f -exec chmod 644 {} \;
-cd /var/www/html/web/app/cache && \
-    chown www-data:www-data -R * && \
-    find . -type d -exec chmod 755 {} \; && \
-    find . -type f -exec chmod 644 {} \;

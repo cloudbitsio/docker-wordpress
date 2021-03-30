@@ -16,12 +16,12 @@ WORKDIR /var/www/html
 #       OR use an external build tool
 FROM builder AS development
     ENV ENV=development
-    RUN sed -i 's|example.com|cloudbits.test|g' /etc/nginx/sites-available/httpd.conf ; \
+    RUN sed -i 's|example.com|DEVELOPMENT|g' /etc/nginx/sites-available/httpd.conf ; \
         ln -s /etc/nginx/sites-available/* /etc/nginx/sites-enabled/
 
 FROM builder AS production
     ENV ENV=production
     COPY --chown=www-data ./site/ /var/www/html
-    RUN sed -i 's|example.com|cloudbits.io|g' /etc/nginx/sites-available/httpd.conf ; \
+    RUN sed -i 's|example.com|PRODUCTION|g' /etc/nginx/sites-available/httpd.conf ; \
         ln -s /etc/nginx/sites-available/* /etc/nginx/sites-enabled/ ; \
         chmod +x /var/www/html/poststart.sh

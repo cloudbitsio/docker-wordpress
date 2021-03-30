@@ -1,0 +1,47 @@
+{
+  "name": "cloudbitsio/bracket",
+  "type": "project",
+  "license": "MIT",
+  "description": " WordPress development and production servers with Docker and project scaffolding",
+  "homepage": "https://cloudbits.io/open-source/",
+  "authors": [
+    {
+      "name": "Saddam Azad",
+      "email": "saddam.azad@me.com",
+      "homepage": "https://github.com/saddam-azad"
+    }
+  ],
+  "keywords": [
+    "bracket", "docker", "development", "wordpress", "wp", "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/cloudbitsio/bracket/issues"
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "roots/bedrock": ">1.15"
+  },
+  "require-dev": {},
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "vendor-dir": "site/vendor/"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "post-update-cmd": [
+      "composer install --working-dir site"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+        "site/": ["roots/bedrock"],
+        "site/vendor/${name}": ["vendor/package"]
+    },
+    "wordpress-install-dir": "site/web/wp"
+  }
+}
