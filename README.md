@@ -30,9 +30,9 @@ Clone this repository into your project folder. The contents of this repository 
 mkdir website.com && cd website.com
 ```
 
-2. Clone Bracket:
+2. Clone this repository:
 ```bash
-git clone --depth=1 git@github.com:cloudbitsio/bracket.git . && rm -rf .git
+git clone --depth=1 git@github.com:cloudbitsio/docker-wordpress.git . && rm -rf .git
 ```
 
 3. Create a new Bedrock project into the `site` folder.
